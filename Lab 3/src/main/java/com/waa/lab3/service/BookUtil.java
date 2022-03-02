@@ -1,14 +1,12 @@
-package com.waa.lab3.model;
+package com.waa.lab3.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import com.waa.lab3.model.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
-@Repository
+@Service
 public class BookUtil {
 
     private List<Book> books = new ArrayList<>();
