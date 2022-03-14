@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 public class Transaction {
-
+    @NonNull
     private double amount;
     private Date date;
     private String description;
