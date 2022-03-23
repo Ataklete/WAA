@@ -10,14 +10,12 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends MongoRepository<Student, Integer> {
     Student findByPhone(String phone);
-
+    Student findStudentByName(String name);
     @Query("{email : ?0}")
     Student findCustomerWithEmail(String email);
-
     @Query("{'address.city' : ?0}")
     List<Student>  findStudenyByCity(String city);
 
-    @Query("{name : ?0}")
-    Student findStudentByName(String name);
+
 }
 
