@@ -1,0 +1,25 @@
+type Book {
+isbn : Int!
+author : String!
+title : String!
+price : Float!
+}
+
+type Query {
+getBook : [Book]
+findByISBN(isbn : Int): Book
+findByAuthor(author : String) : Book
+}
+
+input book {
+    isbn : Int!,
+    author : String!,
+    title : String!,
+    price : Float!
+}
+
+type Mutation {
+addBook(book : book) : Boolean
+deleteBook(isbn : Int) : String
+updateBook( book : book ): String
+}

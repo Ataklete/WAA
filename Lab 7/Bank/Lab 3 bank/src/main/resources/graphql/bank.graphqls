@@ -1,0 +1,41 @@
+type Account {
+accountHolder : String!
+accountNumber : Int!
+balance : Float
+transactions : [Transaction]
+}
+
+type Transaction {
+amount : Float!
+date : Date
+description : String
+}
+
+type AccountDTO {
+    accountHolder : String!
+    accountNumber : Int!
+    balance : Float
+    transactions : [TransactionDTO]
+}
+
+type TransactionDTO {
+    amount : Float!
+    date : Date
+    description : String
+}
+
+type Query {
+getAccount(accountNumber : Int): AccountDTO
+}
+
+type Mutation {
+createAccount(accountNumber:Int, accountHolder:String) : Account
+deposit(accountNumber:Int,amount:Float) : AccountDTO
+withdraw(accountNumber:Int, amount:Float) : AccountDTO
+removeAccount(accountNumber: Int) : Void
+deposits(amount: Float): Void
+withdraws(amount: Float): Void
+}
+
+scalar Void
+scalar Date
